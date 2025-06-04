@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stephenhebert/axios-plugins.git"
+    "url": "git+https://github.com/stephenhebert/axios-plugins.git"
   },
   "scripts": {
     "build": "vite build",
@@ -46,5 +46,8 @@
     "typescript-eslint": "^8.33.1",
     "vite": "^6.3.5",
     "vitest": "^3.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
