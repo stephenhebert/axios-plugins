@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import { http, HttpResponse } from 'msw'
 import { setupServer } from 'msw/node'
 import { afterEach, beforeEach, describe, expect, test } from 'vitest'
@@ -35,7 +35,7 @@ describe('Enabled by default', () => {
     }
     catch (error) {
       errorThrown = true
-      expect(error.response.status).toBe(404) // Expect the error to have a 404 status
+      expect((error as AxiosError).response?.status).toBe(404) // Expect the error to have a 404 status
     }
     expect(errorThrown).toBe(true) // Ensure that an error was thrown
   })
@@ -71,7 +71,7 @@ describe('Disabled by default', () => {
     }
     catch (error) {
       errorThrown = true
-      expect(error.response.status).toBe(404) // Expect the error to have a 404 status
+      expect((error as AxiosError).response?.status).toBe(404) // Expect the error to have a 404 status
     }
     expect(errorThrown).toBe(true) // Ensure that an error was thrown
   })

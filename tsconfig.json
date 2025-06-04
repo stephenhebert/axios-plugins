@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "esnext",
     "useDefineForClassFields": true,
-    "module": "ESNext",
+    "module": "esnext",
     "lib": [
       "ES2020",
       "DOM",
@@ -11,12 +11,14 @@
     "skipLibCheck": true,
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
+    "declarationDir": "./dist/types",
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -27,5 +29,10 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test"
+  ],
 }

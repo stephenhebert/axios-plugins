@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import { http, HttpResponse } from 'msw'
 import { setupServer } from 'msw/node'
 import { afterEach, beforeEach, expect, test } from 'vitest'
@@ -83,7 +83,7 @@ test('Should support abort signal', async () => {
     await client.get('http://some-cool-server/api/data', { params: { page: 1 }, signal: controller.signal, plugins: { getAllPages: true } })
   }
   catch (error) {
-    expect(error.name).toBe('CanceledError') // Expect an AbortError
+    expect((error as AxiosError).name).toBe('CanceledError') // Expect an AbortError
   }
 })
 

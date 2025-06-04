@@ -10,6 +10,12 @@ declare module 'axios' {
   }
 }
 
+/**
+ * Settles a promise based on the response status.
+ * @param resolve - Function to resolve the promise.
+ * @param reject - Function to reject the promise.
+ * @param response - Axios response object.
+ */
 function settle(resolve: (value: AxiosResponse) => void, reject: (reason?: unknown) => void, response: AxiosResponse) {
   const validateStatus = response.config.validateStatus
   if (!response.status || !validateStatus || validateStatus(response.status)) {
@@ -29,6 +35,11 @@ function settle(resolve: (value: AxiosResponse) => void, reject: (reason?: unkno
   }
 }
 
+/**
+ * Serializes an Axios request configuration into a unique cache key.
+ * @param requestConfig - Axios request configuration.
+ * @returns A string representing the cache key.
+ */
 function serializeRequest(requestConfig: AxiosRequestConfig): string {
   const { baseURL, url, params } = requestConfig
   const qs = new URLSearchParams(params).toString()
@@ -37,6 +48,11 @@ function serializeRequest(requestConfig: AxiosRequestConfig): string {
 
 // TODO: test how this works with other plugins
 
+/**
+ * Installs the inflightCache plugin into an Axios instance.
+ * Prevents duplicate requests by caching inflight requests.
+ * @param client - Axios instance to install the plugin on.
+ */
 export function install(client: AxiosInstance): void {
   client.inflightCache = new Map<string, Promise<AxiosResponse>>()
 

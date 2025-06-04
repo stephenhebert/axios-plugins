@@ -6,6 +6,9 @@ import globals from 'globals'
 import tsLint from 'typescript-eslint'
 
 export default defineConfig([
+  {
+    ignores: ['dist/*'],
+  },
   { files: [
     '**/*.{js,mjs,cjs,ts,mts,cts}',
   ],
@@ -34,7 +37,7 @@ export default defineConfig([
   }),
   {
     files: [
-      '**/*.{ts,js}',
+      '**/*.{js,mjs,cjs,ts,mts,cts}',
     ],
     rules: {
       'array-element-newline': [

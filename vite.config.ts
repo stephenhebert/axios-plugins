@@ -2,10 +2,10 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
+    emptyOutDir: false,
     outDir: 'dist',
-    emptyOutDir: true,
     lib: {
-      entry: 'src/index.ts',
+      entry: './src/index.ts',
       fileName: 'index',
       formats: [
         'es',

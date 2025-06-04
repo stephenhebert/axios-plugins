@@ -1,5 +1,8 @@
 import type { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 
+/**
+ * Configuration options for the getAllPages plugin.
+ */
 interface getAllPagesConfig {
   resultsParam?: string
   pageParam?: string
@@ -18,10 +21,21 @@ declare module 'axios' {
   }
 }
 
+/**
+ * Generates an array of numbers within a specified range.
+ * @param start - Starting number of the range.
+ * @param end - Ending number of the range.
+ * @returns An array of numbers from start to end.
+ */
 function arrayRange(start: number, end: number): number[] {
   return Array.from({ length: end - start + 1 }, (_, i) => start + i)
 }
 
+/**
+ * Installs the getAllPages plugin into an Axios instance.
+ * Automatically fetches all paginated API results.
+ * @param client - Axios instance to install the plugin on.
+ */
 export function install(client: AxiosInstance): void {
   client.interceptors.request.use((request: InternalAxiosRequestConfig) => {
     const getAllPagesConfig = request.plugins?.getAllPagesConfig || {}

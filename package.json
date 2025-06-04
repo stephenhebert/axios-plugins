@@ -1,36 +1,35 @@
 {
   "name": "@stephenhebert/axios-plugins",
-  "version": "1.0.0",
-  "main": "src/index.ts",
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
+  "version": "1.0.0",
+  "author": "Stephen Hebert",
+  "description": "A collection of Axios plugins for enhanced functionality.",
+  "license": "MIT",
+  "homepage": "https://github.com/stephenhebert/axios-plugins",
+  "bugs": {
+    "url": "https://github.com/stephenhebert/axios-plugins/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stephenhebert/axios-plugins.git"
   },
-  "scripts": {
-    "build": "vite build",
-    "test": "vitest",
-    "release": "npx bumpp package.json --commit \"release: v\" --push --tag"
-  },
-  "keywords": [
-    "axios",
-    "plugins",
-    "middleware",
-    "interceptors",
-    "http",
-    "typescript",
-    "javascript",
-    "api"
+  "main": "/dist/index.js",
+  "files": [
+    "dist"
   ],
-  "author": "Stephen Hebert",
-  "license": "MIT",
-  "description": "A collection of Axios plugins for enhanced functionality.",
+  "types": "/dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "test": "vitest",
+    "release": "npx bumpp package.json --commit \"release: v\" --push --tag",
+    "lint": "eslint ."
+  },
   "peerDependencies": {
     "axios": "^1.9.0"
   },
@@ -47,6 +46,16 @@
     "vite": "^6.3.5",
     "vitest": "^3.2.0"
   },
+  "keywords": [
+    "axios",
+    "plugins",
+    "middleware",
+    "interceptors",
+    "http",
+    "typescript",
+    "javascript",
+    "api"
+  ],
   "publishConfig": {
     "access": "public"
   }

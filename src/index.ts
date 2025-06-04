@@ -11,8 +11,13 @@ declare module 'axios' {
   }
 }
 
+/**
+ * Entry point for the Axios plugins library.
+ * Exports all available plugins for use.
+ */
 export {
   allow404,
   getAllPages,
   inflightCache
 }
+
