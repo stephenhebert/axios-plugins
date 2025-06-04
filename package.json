@@ -1,0 +1,50 @@
+{
+  "name": "@stephenhebert/axios-plugins",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stephenhebert/axios-plugins.git"
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest",
+    "release": "npx bumpp package.json --commit \"release: v\" --push --tag"
+  },
+  "keywords": [
+    "axios",
+    "plugins",
+    "middleware",
+    "interceptors",
+    "http",
+    "typescript",
+    "javascript",
+    "api"
+  ],
+  "author": "Stephen Hebert",
+  "license": "MIT",
+  "description": "A collection of Axios plugins for enhanced functionality.",
+  "peerDependencies": {
+    "axios": "^1.9.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@stylistic/eslint-plugin": "^4.4.0",
+    "axios": "^1.9.0",
+    "eslint": "^9.28.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^16.2.0",
+    "msw": "^2.9.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.33.1",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.0"
+  }
+}
