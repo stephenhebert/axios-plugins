@@ -1,7 +1,7 @@
 {
   "name": "@stephenhebert/axios-plugins",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Stephen Hebert",
   "description": "A collection of Axios plugins for enhanced functionality.",
   "license": "MIT",
