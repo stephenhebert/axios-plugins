@@ -75,7 +75,11 @@ const client = axios.create({
 
 getAllPages.install(client)
 
-client.get('http://example.com/api/data')
+client.get('http://example.com/api/data', {
+    plugins: {
+      getAllPages: true,
+    },
+  })
   .then(response => console.log(response.data))
 ```
 
