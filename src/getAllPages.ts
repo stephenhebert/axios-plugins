@@ -77,7 +77,6 @@ export function install(client: AxiosInstance): void {
       if (remainingPages > 0 && nextPageUrl) {
         const nextPage = page + 1
         const lastPage = page + remainingPages
-        console.log('here', arrayRange(nextPage, lastPage))
 
         const headers = response.config.headers
         const { origin, pathname, search } = new URL(nextPageUrl)
