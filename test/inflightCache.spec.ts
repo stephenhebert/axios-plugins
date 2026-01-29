@@ -2,7 +2,7 @@ import axios from 'axios'
 import { http, HttpResponse } from 'msw'
 import { setupServer } from 'msw/node'
 import { afterEach, beforeEach, describe, expect, test } from 'vitest'
-import { install } from '../src/inflightCache'
+import { install } from '../src/plugins/inflightCache'
 import delay from './utils/delay'
 let count = 0
 

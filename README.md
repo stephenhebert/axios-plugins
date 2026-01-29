@@ -67,11 +67,7 @@ Automatically fetch all paginated results:
 import axios from 'axios'
 import { getAllPages } from '@stephenhebert/axios-plugins'
 
-const client = axios.create({
-  plugins: {
-    getAllPages: true,
-  },
-})
+const client = axios.create()
 
 getAllPages.install(client)
 
@@ -81,6 +77,29 @@ client.get('http://example.com/api/data', {
     },
   })
   .then(response => console.log(response.data))
+```
+
+### With Abort Controller
+
+Wrap request callback in factory decorator to handle aborting previous requests when subsequent requests are made:
+
+```ts
+import axios from 'axios'
+import { withAbortController } from '@stephenhebert/axios-plugins'
+
+const client = axios.create()
+
+const fetchData = withAbortController( async (signal) => { 
+  try {
+    await client.get('http://example.com/api/data', { signal } )
+  }
+  catch (error) {}
+})
+
+fetchData() // starts first request
+fetchData() // cancels first request and starts second request
+
+
 ```
 
 ## Development

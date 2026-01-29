@@ -2,7 +2,7 @@ import axios, { AxiosError } from 'axios'
 import { http, HttpResponse } from 'msw'
 import { setupServer } from 'msw/node'
 import { afterEach, beforeEach, describe, expect, test } from 'vitest'
-import { install } from '../src/allow404'
+import { install } from '../src/plugins/allow404'
 import delay from './utils/delay'
 
 describe('Enabled by default', () => {

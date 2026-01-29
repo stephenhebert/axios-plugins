@@ -2,7 +2,7 @@ import axios, { AxiosError } from 'axios'
 import { http, HttpResponse } from 'msw'
 import { setupServer } from 'msw/node'
 import { afterEach, beforeEach, expect, test } from 'vitest'
-import { install } from '../src/getAllPages'
+import { install } from '../src/plugins/getAllPages'
 import delay from './utils/delay'
 
 const server = setupServer(

@@ -1,6 +1,7 @@
-import * as allow404 from './allow404'
-import * as getAllPages from './getAllPages'
-import * as inflightCache from './inflightCache'
+import * as allow404 from './plugins/allow404'
+import * as getAllPages from './plugins/getAllPages'
+import * as inflightCache from './plugins/inflightCache'
+import { withAbortController } from './utils/withAbortController'
 
 declare module 'axios' {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
@@ -18,6 +19,7 @@ declare module 'axios' {
 export {
   allow404,
   getAllPages,
-  inflightCache
+  inflightCache,
+  withAbortController
 }
 
